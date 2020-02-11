@@ -1,0 +1,113 @@
+\documentclass[border=2mm]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{shapes,snakes}
+\usepackage{amsmath,amssymb,fontawesome}
+\usepackage{xcolor}
+
+\definecolor{pink}{RGB}{205, 125, 169}
+\definecolor{blue}{RGB}{36, 118, 182}
+\definecolor{orange}{RGB}{230, 160, 46}
+\definecolor{green}{RGB}{71, 159, 119}
+
+%	\textcolor{orange}{\faSquare} HMD-Liv %
+%	\textcolor{pink}{\faSquare} HMD-Pyr %
+%	\textcolor{blue}{\faSquare} DT-Liv %
+%	\textcolor{green}{\faSquare} DT-Pyr % 
+
+\begin{document}
+
+
+
+% Define box and box title style
+\tikzstyle{mybox} = [draw=black, fill=white, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=11pt]
+\tikzstyle{fancytitle} =[fill=black, text=white, rounded corners]
+
+%\begin{tikzpicture}
+%\node[draw,text width=3cm] at (0,2) { \tiny 
+%\textcolor{orange}{\faSquare} HMD-Liv \textcolor{pink}{\faSquare} HMD-Pyr \textcolor{blue}{\faSquare} DT-Liv \textcolor{green}{\faSquare} DT-Pyr % 
+%};
+%\end{tikzpicture}
+
+\begin{tikzpicture}
+\node[text width=4cm] at (0, 3) {\small \begin{flushleft}\bf User groups\end{flushleft}};
+\node[text width=4cm] at (0,2) { \footnotesize
+\textcolor{orange}{\faSquare} HMD-Liv \thinspace\thinspace \textcolor{blue}{\faSquare} DT-Liv \\
+\textcolor{pink}{\faSquare} HMD-Pyr \thinspace \textcolor{green}{\faSquare} DT-Pyr };
+\node [mybox] (box1){%
+    \begin{minipage}{0.35\textwidth} 
+    \vspace*{-5.5mm}
+    \begin{flushright}
+    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+    \end{flushright}
+    \vspace*{-6mm}
+        \begin{itemize} \small
+            \item Interaction training
+            \item Visualization viewing
+        \end{itemize}
+    \end{minipage}
+};
+\node[fancytitle, right=10pt] at (box1.north west) {\bf Interaction};
+\node[fancytitle, rounded corners] at (box1.east) {\tiny\faSquare};
+
+\draw[->, very thick] (-3,0) -- (box1.west);
+%\path (-3,0) -| node[pos=0, left] {\bf Start} (box1.west);
+\draw[->, very thick] (box1.east) -- (+3.1,0);
+
+\draw[->, dashed,  thick, gray] (box1.south) -- (0,-2);
+\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Response time, degree of interaction, elapsed time. }};
+
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box2){%
+    \begin{minipage}{0.35\textwidth} 
+    \vspace*{-5.5mm}
+    \begin{flushright}
+    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+    \end{flushright}
+    \vspace*{-6mm}
+    \begin{itemize} \small
+            \item Training
+            \item Testing
+        \end{itemize}
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box2.north west) {\bf Task 1};
+\node[fancytitle, rounded corners] at (box2.east) {\tiny\faSquare};
+\draw[->, very thick] (box2.east) -- (+3.1,0);
+
+\draw[->, dashed,  thick, gray] (box2.south) -- (0,-2);
+\node[align=left, text width=4.25cm, text height=4.3mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Accuracy, confidence. }};
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}
+\node [mybox] (box3){%
+    \begin{minipage}{0.35\textwidth} 
+        \vspace*{-5.5mm}
+    \begin{flushright}
+    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+    \end{flushright}
+    \vspace*{-6mm}
+        \begin{itemize} \small
+            \item Training
+            \item Testing
+        \end{itemize}
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box3.north west) {\bf Task 2};
+\node[fancytitle, rounded corners] at (box3.east) {\tiny\faSquare};
+\draw[->, very thick] (box2.east) -- (+3.1,0);
+
+\draw[->, dashed,  thick, gray] (box3.south) -- (0,-2);
+\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Accuracy, coefficient of variation, elapsed time.}};
+\end{tikzpicture}
+
+\end{document}
