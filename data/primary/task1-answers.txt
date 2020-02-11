@@ -1,0 +1,22 @@
+All correct answers that apply are indicated below:
+
+Training Q1. (both conditions) Gelb
+Training Q2. (Pyramid) 2
+Training Q2. (Liver) 3
+
+Pyramid questions
+Q1: hinten, unten, links
+Q2: hinten, oben, links
+Q3: hinten, oben, links
+Q4: hinten, oben, links
+Q5: unten
+
+Liver question
+Q1: hinten, unten, links
+Q2: hinten, unten, links
+Q3: hinten, oben, links
+Q4: vorne, unten, rechts
+Q5: vorne, oben, links
+
+AQ1: hinten, oben
+AQ2: Segment 2

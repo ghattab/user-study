@@ -1,0 +1,7 @@
+Participant ID: Integer ID in the Participant ID field
+Phase ID: Phase (starting from 1) chosen from the Phases drop menu
+Visibility Pointer/Object: Binary with visible (1), else (0)
+Position Pointer/Object(X/Y/Z): Floating point values representing position in millimeters
+Orientation Pointer/Object (X/Y/Z/W): Floating point values representing orientation as quaternion
+Elapsed Time: Calculated since  the start 10 Recordings button was pressed in milliseconds
+Timestamp: ISO 8601 format.

@@ -1,0 +1,3 @@
+exact coordinates of sphere or target (condition)
+(Liver) x: 93.77480	y: 125.06365	z: 102.94963
+(Pyr)	x: 29.45887	y: 30.04693	z: 19.00331
