@@ -1,6 +1,6 @@
 Command line options:
 =======================
-
+The interaction and visualiztion relies on @IMHOTEP-Medical. The source file is provided under src.zip and the subsequent files to fit the 25 MB file size upload limitation.
 
 -PID ParticipantID (Required)
 Set the participant ID.
