@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+
+
+<TrackerTool>
+
+	<description>
+	Pointer
+	</description>
+
+	<creation_date>
+	Sat Aug  2 14:19:02 2014
+
+	</creation_date>
+
+	<tool_type>
+	Wireless
+	</tool_type>
+
+	<rom_file>
+	/media/TCO/TCO-All/Polaris/Tracker/8700340.rom
+	</rom_file>
+
+	<port>
+	1
+	</port>
+
+	<BLEID>
+	
+	</BLEID>
+
+	<IMUCalibration>
+		0	0	0	0	0	0	5.42398e-315	0	9.48606e-321
+	</IMUCalibration>
+
+	<tooltip_transform RMES="0.16472">
+		0.000000	0.000000	0.000000	1.000000	-17.336531	0.761711	-159.489471
+	</tooltip_transform>
+
+	<visualization>
+	
+	</visualization>
+
+	<visualization_transform  RMES="0">
+		0.000000	0.000000	0.000000	1.000000	0.000000	0.000000	0.000000
+	</visualization_transform>
+
+</TrackerTool>
