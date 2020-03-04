@@ -16,9 +16,9 @@ Where to write output.
 
 
 Example usage:
-
+```
 dt-pyramid.exe -logFile log.txt -outputDir Results/ -PID 9374
-
+```
 
 
 Important:
