@@ -1,0 +1,8 @@
+Method:  HMD = head-mounted display, or DT  = desktop
+Model:  L=liver, P=pyramid
+Gender: W=woman, M=man
+Sample: 0=training, 1=testing
+TargetDistance: distance between the origin of pointer and the target center (liver or pyramid)
+Angle: angle between the line segment connecting the origin and target center and the straight line through the origin in the direction specified by (Direction1, Direction2, Direction3).  
+Precision: hit = angle is between 0 and 30 degrees, uncertain = angle is between 30 and 60 degrees, miss = angle between 60 and 90 degrees
+TargetDistanceScaled: distance described above standardized to the normal distribution with zero mean and unit variance.
