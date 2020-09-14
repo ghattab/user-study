@@ -1,0 +1,22 @@
+Method: HMD = head-mounted display, or DT = desktop 
+
+Model: L=liver, P=pyramid 
+
+Gender: F = female, M=male 
+
+MedExperience: medical experience
+PC:  PC experience 
+VR:  VR experience 
+
+Q1task1,…, Q10task1: questions 1-10, task 1
+Q1task2,…, Q10task2: questions 1-10, task 2
+
+BF1 – BF20 (best five questionnaire)
+
+SystemUsabilityScoreTask1: system usability score for task 1 (point from 1 to 100)  
+SystemUsabilityScoreTask2: system usability score for task 2( points from 0 to 100)
+
+SystemUsabilityScoreTask1cat: system usability score for task 1 (categories: awful, poor, good, excellent)  
+SystemUsabilityScoreTask2cat: system usability score for task 2(categories: awful, poor, good, excellent) 
+
+
