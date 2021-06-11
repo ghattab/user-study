@@ -4,11 +4,13 @@
 \usetikzlibrary{shapes,snakes}
 \usepackage{amsmath,amssymb,fontawesome}
 \usepackage{xcolor}
+\usetikzlibrary{matrix}
 
-\definecolor{pink}{RGB}{205, 125, 169}
-\definecolor{blue}{RGB}{36, 118, 182}
-\definecolor{orange}{RGB}{230, 160, 46}
-\definecolor{green}{RGB}{71, 159, 119}
+\definecolor{blue}{RGB}{0, 70, 230}
+\definecolor{lightblue}{RGB}{115,150,230}
+\definecolor{orange}{RGB}{230, 160, 0}
+\definecolor{lightorange}{RGB}{230, 195, 115}
+
 
 %	\textcolor{orange}{\faSquare} HMD-Liv %
 %	\textcolor{pink}{\faSquare} HMD-Pyr %
@@ -22,6 +24,8 @@
 % Define box and box title style
 \tikzstyle{mybox} = [draw=black, fill=white, very thick,
     rectangle, rounded corners, inner sep=10pt, inner ysep=11pt]
+\tikzstyle{mynewbox} = [draw=black, fill=lightgray, very thick,
+    rectangle, rounded corners, inner sep=10pt, inner ysep=11pt]
 \tikzstyle{fancytitle} =[fill=black, text=white, rounded corners]
 
 %\begin{tikzpicture}
@@ -29,34 +33,39 @@
 %\textcolor{orange}{\faSquare} HMD-Liv \textcolor{pink}{\faSquare} HMD-Pyr \textcolor{blue}{\faSquare} DT-Liv \textcolor{green}{\faSquare} DT-Pyr % 
 %};
 %\end{tikzpicture}
+%\node[text width=4cm] at (-2,0) { \footnotesize
+%\textcolor{blue}{\faSquare} HMD-Liv \thinspace\thinspace \textcolor{orange}{\faSquare} DT-Liv \\
+%\textcolor{lightblue}{\faSquare} HMD-Pyr \thinspace \textcolor{lightorange}{\faSquare} DT-Pyr };
 
+
+\hspace*{-0.5cm}
 \begin{tikzpicture}
-\node[text width=4cm] at (0, 3) {\small \begin{flushleft}\bf User groups\end{flushleft}};
-\node[text width=4cm] at (0,2) { \footnotesize
-\textcolor{orange}{\faSquare} HMD-Liv \thinspace\thinspace \textcolor{blue}{\faSquare} DT-Liv \\
-\textcolor{pink}{\faSquare} HMD-Pyr \thinspace \textcolor{green}{\faSquare} DT-Pyr };
+%\node at (-3.7,0) {\bf Start};
 \node [mybox] (box1){%
     \begin{minipage}{0.35\textwidth} 
     \vspace*{-5.5mm}
     \begin{flushright}
-    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+   % \textcolor{orange}{\faSquare} \textcolor{lightorange}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{lightblue}{\faSquare}
+  {\textcolor{blue}{\faSquare}} 
     \end{flushright}
     \vspace*{-6mm}
         \begin{itemize} \small
-            \item Interaction training
-            \item Visualization viewing
+            \item[\bf(a)] Interaction training\\ (HMD condition)
+            \item[\bf(b)] Visualization viewing\\ (Liver model)
         \end{itemize}
     \end{minipage}
 };
-\node[fancytitle, right=10pt] at (box1.north west) {\bf Interaction};
+\node[fancytitle, right=10pt] at (box1.north west) { Interaction};
 \node[fancytitle, rounded corners] at (box1.east) {\tiny\faSquare};
 
 \draw[->, very thick] (-3,0) -- (box1.west);
 %\path (-3,0) -| node[pos=0, left] {\bf Start} (box1.west);
 \draw[->, very thick] (box1.east) -- (+3.1,0);
 
-\draw[->, dashed,  thick, gray] (box1.south) -- (0,-2);
-\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Response time, degree of interaction, elapsed time. }};
+%\draw[->, dashed,  thick, gray] (box1.south) -- (0,-2);
+%\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.75) {\textcolor{gray}{\footnotesize\bf 
+%P learns how to interact with a demo model.  
+%Then when viewing the assigned model, P is told that the sphere is the target}};
 
 \end{tikzpicture}
 
@@ -67,22 +76,27 @@
     \begin{minipage}{0.35\textwidth} 
     \vspace*{-5.5mm}
     \begin{flushright}
-    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+   
+   % \textcolor{orange}{\faSquare} \textcolor{lightorange}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{lightblue}{\faSquare}
+  {\textcolor{blue}{\faSquare}} 
     \end{flushright}
     \vspace*{-6mm}
     \begin{itemize} \small
-            \item Training
-            \item Testing
+            \item[\bf (c)] Train: 3 Questions\\ Confidence rate (CR)
+            \item[\bf (d)] Test: 4 Liver Questions\\ CR for spatial relations
         \end{itemize}
     \end{minipage}
 };
 
-\node[fancytitle, right=10pt] at (box2.north west) {\bf Task 1};
+\node[fancytitle, right=10pt] at (box2.north west) { Scene Understanding};
 \node[fancytitle, rounded corners] at (box2.east) {\tiny\faSquare};
 \draw[->, very thick] (box2.east) -- (+3.1,0);
 
-\draw[->, dashed,  thick, gray] (box2.south) -- (0,-2);
-\node[align=left, text width=4.25cm, text height=4.3mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Accuracy, confidence. }};
+%\draw[->, dashed,  thick, gray] (box2.south) -- (0,-2);
+%\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.75) {\textcolor{gray}{\footnotesize\bf 
+%A MCT is used for confidence training. 
+%Correct answers to training questions are given. 
+%Testing following without feedback}};
 \end{tikzpicture}
 
 
@@ -92,22 +106,58 @@
     \begin{minipage}{0.35\textwidth} 
         \vspace*{-5.5mm}
     \begin{flushright}
-    \textcolor{orange}{\faSquare} \textcolor{pink}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{green}{\faSquare}
+   % \textcolor{orange}{\faSquare} \textcolor{lightorange}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{lightblue}{\faSquare}
+   
+  {\textcolor{blue}{\faSquare}} 
     \end{flushright}
     \vspace*{-6mm}
         \begin{itemize} \small
-            \item Training
-            \item Testing
+            \item[\bf (e)] Train: 3 Measures\\ Strategy adjustment
+            \item[\bf (f)] Test: 10 Measures\\ Occlusion feedback only
         \end{itemize}
     \end{minipage}
 };
 
-\node[fancytitle, right=10pt] at (box3.north west) {\bf Task 2};
+\node[fancytitle, right=10pt] at (box3.north west) {Direction Estimation};
 \node[fancytitle, rounded corners] at (box3.east) {\tiny\faSquare};
 \draw[->, very thick] (box2.east) -- (+3.1,0);
 
-\draw[->, dashed,  thick, gray] (box3.south) -- (0,-2);
-\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.7) {\textcolor{gray}{\footnotesize\bf Accuracy, coefficient of variation, elapsed time.}};
+%\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.75) {\textcolor{gray}{\footnotesize\bf 
+%A tracked pointing tool is used to point at a point of entry (PoE).
+%The printed model is shown to P as seen in the initial view (b).
+%Upon occlusion, P is asked to review the strategy (training only)
+%In testing, P restarts from the initial view to record all PoE with occlusion feedback only
+%}};
 \end{tikzpicture}
+
+
+\begin{tikzpicture}
+\node [mybox] (box3){%
+    \begin{minipage}{0.35\textwidth} 
+        \vspace*{-5.5mm}
+    \begin{flushright}
+   % \textcolor{orange}{\faSquare} \textcolor{lightorange}{\faSquare} \textcolor{blue}{\faSquare} \textcolor{lightblue}{\faSquare}
+  {\textcolor{blue}{\faSquare}} 
+    \end{flushright}
+    \vspace*{-6mm}
+        \begin{itemize} \small
+            \item[\bf (g)] Demographics
+            \item[\bf (h)] System Usability Scale
+            \item[\bf (i)] Big Five Inventory
+        \end{itemize}
+    \end{minipage}
+};
+
+\node[fancytitle, right=10pt] at (box3.north west) { Post hoc};
+\node[fancytitle, rounded corners] at (box3.east) {\tiny\faSquare};
+\draw[->, very thick] (box2.east) -- (+3.1,0);
+
+%\node at (+3.7,0) {\bf End};
+
+%\node[align=left, text width=4.25cm, text height=.1mm] at (0,-2.75) {\textcolor{gray}{\footnotesize\bf 
+%The demographics part included (Gender, age, etc), SUS for the interaction and pointing/tracking system, respectively.
+%}};
+\end{tikzpicture}
+
 
 \end{document}
